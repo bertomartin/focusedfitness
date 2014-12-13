@@ -40,7 +40,7 @@ set(:symlinks, [
 
 namespace :deploy do
 
-  after 'deploy:setup_config', 'nginx:reload'
+  #after 'deploy:setup_config', 'nginx:reload'
 
   desc 'Restart application'
   task :restart do
