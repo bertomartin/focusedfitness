@@ -40,7 +40,11 @@ set(:symlinks, [
 
 namespace :deploy do
 
-  #after 'deploy:setup_config', 'nginx:reload'
+  # remove vhost
+  before 'deploy:setup_config', 'nginx:remove_default_vhost'
+
+  # reload nginx so it picks up modified vhosts
+  after 'deploy:setup_config', 'nginx:reload'
 
   desc 'Restart application'
   task :restart do
