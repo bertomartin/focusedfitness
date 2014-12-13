@@ -4,7 +4,7 @@ lock '3.3.5'
 set :application, 'focusedfitness'
 set :repo_url, 'git@github.com:bertomartin/focusedfitness.git'
 
-set :linked_files, %w{config/database.yml .env}
+set :linked_files, %w{config/database.yml}
 set :linked_dirs, %w{tmp/pids}
 
 set :unicorn_config_path, "config/unicorn.rb"
@@ -15,7 +15,33 @@ set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rben
 set :rbenv_map_bins, %w{rake gem bundle ruby rails}
 set :rbenv_roles, :all
 
+set(:config_files, %w(
+  nginx.conf
+  database.example.yml
+  unicorn.rb
+  unicorn_init.sh
+  ))
+
+set(:executable_config_files, %w(
+  unicorn_init.sh
+))
+
+set(:symlinks, [
+  {
+    source: "nginx.conf",
+    link: "/etc/nginx/sites-enabled/focusedfitness"
+  },
+  {
+    source: "unicorn_init.sh",
+    link: "/etc/init.d/unicorn_focusedfitness"
+  }
+])
+
+
 namespace :deploy do
+
+  after 'deploy:setup_config', 'nginx:reload'
+
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do

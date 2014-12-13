@@ -1,6 +1,6 @@
 set :stage, :production
 
-set :deploy_to, '/home/deployer/apps/#{application}'
+set :deploy_to, '/home/deployer/apps/focusedfitness'
 
 set :branch, 'master'
 
