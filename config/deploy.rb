@@ -50,8 +50,8 @@ namespace :deploy do
   # reload nginx so it picks up modified vhosts
   after 'deploy:setup_config', 'nginx:reload'
 
-  #after 'deploy:symlink:shared', 'deploy:compile_assets_locally'
-  #after :finishing, 'deploy:cleanup'
+  after 'deploy:symlink:shared', 'deploy:compile_assets_locally'
+  after :finishing, 'deploy:cleanup'
 
   desc 'Restart application'
   task :restart do

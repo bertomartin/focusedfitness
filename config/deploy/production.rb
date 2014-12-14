@@ -12,6 +12,7 @@ set :full_app_name, 'focusedfitness'
 set :unicorn_worker_count, 5
 
 set :deploy_to, "/home/#{fetch(:deploy_user)}/apps/#{fetch(:full_app_name)}"
+set :server_name, 'focusedfitnessnyc.com'
 
 
 # Simple Role Syntax
