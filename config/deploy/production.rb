@@ -1,10 +1,13 @@
 set :stage, :production
 
-set :deploy_to, '/home/deployer/apps/focusedfitness'
+set :deploy_to, '/home/deployer/focusedfitness'
 
 set :branch, 'master'
 
 set :rails_env, 'production'
+
+#set :full_app_name, "#{fetch(:application)}_#{fetch(:stage)}"
+set :full_app_name, 'focusedfitness'
 
 
 # Simple Role Syntax
@@ -16,6 +19,8 @@ set :rails_env, 'production'
 role :app, %w{deployer@104.236.116.93}
 role :web, %w{deployer@104.236.116.93}
 role :db,  %w{deployer@104.236.116.93}
+
+set :enable_ssl, false
 
 
 # Extended Server Syntax
