@@ -5,9 +5,11 @@ set :application, 'focusedfitness'
 set :repo_url, 'git@github.com:bertomartin/focusedfitness.git'
 
 set :linked_files, %w{config/database.yml}
-set :linked_dirs, %w{tmp/pids}
+set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
-set :unicorn_config_path, "config/unicorn.rb"
+set :deploy_user, 'deployer'
+
+#set :unicorn_config_path, "config/unicorn.rb"
 
 set :rbenv_type, :user
 set :rbenv_ruby, '2.1.5'
@@ -47,6 +49,9 @@ namespace :deploy do
 
   # reload nginx so it picks up modified vhosts
   after 'deploy:setup_config', 'nginx:reload'
+
+  after 'deploy:symlink:shared', 'deploy:compile_assets_locally'
+  after :finishing, 'deploy:cleanup'
 
   desc 'Restart application'
   task :restart do

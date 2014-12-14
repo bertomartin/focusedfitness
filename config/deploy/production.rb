@@ -1,6 +1,6 @@
 set :stage, :production
 
-set :deploy_to, '/home/deployer/focusedfitness'
+#set :deploy_to, '/home/deployer/focusedfitness'
 
 set :branch, 'master'
 
@@ -8,6 +8,10 @@ set :rails_env, 'production'
 
 #set :full_app_name, "#{fetch(:application)}_#{fetch(:stage)}"
 set :full_app_name, 'focusedfitness'
+
+set :unicorn_worker_count, 5
+
+set :deploy_to, "/home/#{fetch(:deploy_user)}/apps/#{fetch(:full_app_name)}"
 
 
 # Simple Role Syntax
