@@ -12,9 +12,9 @@ set :full_app_name, 'focusedfitness'
 set :unicorn_worker_count, 5
 
 set :deploy_to, "/home/#{fetch(:deploy_user)}/apps/#{fetch(:full_app_name)}"
-set :server_name, 'www.focusedfitnessnyc.com focusedfitnessnyc.com'
+set :server_name, '104.236.116.93' #'www.focusedfitnessnyc.com focusedfitnessnyc.com'
 
-server 'www.focusedfitnessnyc.com', user: 'deployer', roles: %w{web app db}, primary: true
+server '104.236.116.93', user: 'deployer', roles: %w{web app db}, primary: true
 
 
 # Simple Role Syntax
