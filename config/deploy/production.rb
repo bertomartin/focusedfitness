@@ -12,7 +12,9 @@ set :full_app_name, 'focusedfitness'
 set :unicorn_worker_count, 5
 
 set :deploy_to, "/home/#{fetch(:deploy_user)}/apps/#{fetch(:full_app_name)}"
-set :server_name, 'focusedfitnessnyc.com'
+set :server_name, 'www.focusedfitnessnyc.com focusedfitnessnyc.com'
+
+server 'www.focusedfitnessnyc.com', user: 'deployer', roles: %w{web app db}, primary: true
 
 
 # Simple Role Syntax
@@ -21,11 +23,13 @@ set :server_name, 'focusedfitnessnyc.com'
 # is considered to be the first unless any hosts have the primary
 # property set.  Don't declare `role :all`, it's a meta role.
 
-role :app, %w{deployer@104.236.116.93}
-role :web, %w{deployer@104.236.116.93}
-role :db,  %w{deployer@104.236.116.93}
+#role :app, %w{deployer@104.236.116.93}
 
 set :enable_ssl, false
+
+set :ssh_options, {
+  user: 'deployer'
+}
 
 
 # Extended Server Syntax

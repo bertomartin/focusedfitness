@@ -4,7 +4,7 @@ lock '3.3.5'
 set :application, 'focusedfitness'
 set :repo_url, 'git@github.com:bertomartin/focusedfitness.git'
 
-set :linked_files, %w{config/database.yml}
+set :linked_files, %w{config/database.yml} #set :linked_files, %w{config/database.yml config/application.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 set :deploy_user, 'deployer'
@@ -56,8 +56,9 @@ namespace :deploy do
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
-      invoke 'unicorn:restart'
+      #invoke 'unicorn:restart'
     end
+    invoke 'unicorn:restart'
   end
 
   after :publishing, :restart

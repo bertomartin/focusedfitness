@@ -1,10 +1,9 @@
 upstream unicorn {
-  server unix:/var/sockets/unicorn.<%= fetch(:full_app_name) %>.sock fail_timeout=0;
+  server unix:/tmp/unicorn.<%= fetch(:full_app_name) %>.sock fail_timeout=0;
 }
 
 server {
-  server_name <%= fetch(:server_name) %>;
-  listen 80;
+  listen 80 default;
   root <%= fetch(:deploy_to) %>/current/public;
 
   location ^~ /assets/ {
