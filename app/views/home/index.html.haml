@@ -1,0 +1,103 @@
+.jumbotron
+  .container.text-center
+    %h1
+      Focused Fitness NYC
+      %small
+        Achieve your goals
+    %p
+      Go from where you are now to where you want to be
+
+    .btn-egroup
+      =link_to "Get in touch", new_message_path, :class=>"btn btn-lg btn-primary"
+      =link_to "Programs", programs_path, :class => "btn btn-lg btn-primary"
+
+/testimonials
+.container
+  .row
+    .col-lg-9
+      %section
+        .page-header#section-testimonials
+          %h2
+            Testimonials
+            %small
+              This is what my customers are saying about me.
+
+        .row
+          .col-lg-4
+            %blockquote
+              %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis error facilis quaerat reprehenderit ullam iure minima totam consectetur accusamus saepe id autem facere quod ex maxime reiciendis alias vel voluptatibus!
+              %footer
+                Lien
+          .col-lg-4
+            %blockquote
+              %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis error facilis quaerat reprehenderit ullam iure minima totam consectetur accusamus saepe id autem facere quod ex maxime reiciendis alias vel voluptatibus!
+              %footer
+                Rob
+          .col-lg-4
+            %blockquote
+              %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis error facilis quaerat reprehenderit ullam iure minima totam consectetur accusamus saepe id autem facere quod ex maxime reiciendis alias vel voluptatibus!
+              %footer
+                Cathy
+
+      %section
+        .page-header#section-programs
+          %h2
+            Programs
+            %small
+              Check out my various programs
+
+        .row
+          .col-md-4
+            =image_tag 'program3.jpg', {:class => 'img-responsive'}
+          .col-md-8
+            %h3
+              Program Title
+            %p
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt error laborum quod cupiditate alias fugit quidem soluta debitis voluptates magnam eos eligendi. Laboriosam nulla et optio modi minus quis molestias.
+              =link_to "Read More", programs_path
+
+        %hr
+
+        .row
+          .col-md-8
+            %h3
+              Program Title
+            %p
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt error laborum quod cupiditate alias fugit quidem soluta debitis voluptates magnam eos eligendi. Laboriosam nulla et optio modi minus quis molestias.
+              =link_to "Read More", programs_path
+          .col-md-4
+            =image_tag 'program2.jpg', {:class => 'img-responsive'}
+
+        %hr
+
+        .row
+          .col-md-4
+            =image_tag 'program1.jpg', {:class => 'img-responsive'}
+          .col-md-8
+            %h3
+              Program Title
+            %p
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt error laborum quod cupiditate alias fugit quidem soluta debitis voluptates magnam eos eligendi. Laboriosam nulla et optio modi minus quis molestias.
+              =link_to "Read More", programs_path
+
+      /end programs
+
+
+
+    .col-lg-3
+      .panel.panel-info
+        .panel-heading
+          %h3.panel-title
+            Alan Sidransky
+        .panel-body
+          %p
+            =image_tag 'program1.jpg', {:class => 'img-responsive'}
+          %p
+            Wellness is an obtainable goal and we can help you to achieve it. Whether you’ve come here to lose
+            weight, shape up or manage your health you’re in the right place. Our Focused Fitness NYC programs
+            are specifically designed to meet your individual needs. Each client is privately evaluated and even if
+            you choose one of our proven programs we tailor it to your needs, likes and dislikes. Your health is
+            about you not us and we’re here to help you achieve your goals not fit you into a preset exercise mold.
+            =link_to "Read More", about_path
+      / %span.glyphicon.glyphicon-search
+

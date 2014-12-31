@@ -1,0 +1,77 @@
+!!!
+%html
+  %head
+    %title Focusedfitness
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+  %body
+
+    %nav.navbar.navbar-inverse.navbar-fixed-top#main-navbar{role: "navigation"}
+      .container
+        .navbar-header
+          %button.navbar-toggle{type: "button", :"data-toggle"=>"collapse", :"data-target" => "#nabar-collapse"}
+            %span.sr-only
+              Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+
+          %a.navbar-brand{:href => "/"} Focused Fitness NYC
+
+        .collapse.navbar-collapse#navbar-collapse
+          %ul.nav.navbar-nav
+            %li
+              %a{:href => "/"} Home
+            %li
+              %a{:href => "/#section-testimonials"} Testimonials
+            %li
+              =link_to "Programs", programs_path
+            %li
+              =link_to "F.A.Q", faq_path
+            %li
+              =link_to "About", about_path
+            %li
+              =link_to "Conact Me", new_message_path
+              / %a{:href => "#section-contact"} Contact
+
+    / .container
+    / %p.notice= notice
+    / %p.alert= alert
+    = yield
+
+
+    %footer
+      %nav.navbar.navbar-default.navbar-fixed-bottom
+        .container.text-center
+          .navbar-inner.navbar-content-center
+            / %h3
+            /   Subscribe to my newsletter
+            / %p
+            /   Enter your name and email below
+            / %form.form-inline{:action => "", :role=>"form"}
+            /   .form-group
+            /     %label.sr-only{:for => "subscribe-name"} Name
+            /     %input.form-control#subscribe-name{:type => "text", :placeholder=>"Name"}
+            /   .form-group
+            /     %label.sr-only{:for => "subscribe-email"} Email
+            /     %input.form-control#subscribe-email{:type => "email", :placeholder => "Email"}
+
+            /   %buttom.btn.btn-default.navbar-button{:type=>"submit"} Subscribe
+
+            / %p
+            /   %small
+            /     %em
+            /       I will only use your address for sending you great content from my blog. I will not send to a third party
+
+
+            %ul.list-inline
+              %li
+                %a{:href=>"#"} Twitter
+              %li
+                %a{:href=>"#"} Facebook
+
+            %p
+              &copy; Copyright Focused Fitness NYC 2014
+
+

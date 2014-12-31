@@ -24,5 +24,13 @@ module Focusedfitness
     config.active_record.raise_in_transactional_callbacks = true
 
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
+    config.assets.precompile += %w(.svg .eot .woff .ttf)
+    config.serve_static_assets = true
+    config.assets.js_compressor = :uglifier
+    config.assets.compile = true
+    config.assets.digest = true
+    config.assets.version = '1.0'
   end
 end

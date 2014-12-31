@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
 
+  resources :messages
+
   devise_for :users
   #mount Storytime::Engine => "/blog"
   resources :articles
 
-  root to: "articles#index"
+  get 'faq' => 'home#faq', as: :faq
+  get 'about' => 'home#about', as: :about
+  get 'programs' => 'home#programs', as: :programs
+
+  root to: "home#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
