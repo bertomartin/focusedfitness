@@ -8,6 +8,7 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     if @message.save
       # send message
+      MessageMailer.message_email(@message).deliver_now
       flash[:notice] = "Message Sent! Thank you for contacting me."
       redirect_to root_url
     else

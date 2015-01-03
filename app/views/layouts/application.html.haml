@@ -35,9 +35,8 @@
               =link_to "Conact Me", new_message_path
               / %a{:href => "#section-contact"} Contact
 
-    / .container
-    / %p.notice= notice
-    / %p.alert= alert
+    .container
+      =flash_messages
     = yield
 
 

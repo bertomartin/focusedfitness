@@ -52,6 +52,8 @@ group :development, :test do
 
   gem 'quiet_assets'
 
+  gem 'debugger'
+
   # capistrano
   gem 'capistrano-rails', require: false
   gem 'capistrano-bundler', require: false
