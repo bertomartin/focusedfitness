@@ -1,5 +1,7 @@
 @import "../../../vendor/assets/stylesheets/_bootstrap.scss";
 
+$headings-font-family: 'Open Sans', sans-serif;
+
 
 
 /* main page */
@@ -44,8 +46,11 @@
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
-  font-family: Montserrat, sans-serif;
+  /*font-family: Montserrat, sans-serif;*/
+  /* font-family: 'Open Sans', sans-serif;*/
+  font-family: 'Noto Serif', serif;
 }
+
 .footer {
   position: absolute;
   bottom: 0;
@@ -58,4 +63,8 @@ body {
 
 .programs {
   margin-bottom: 20px;
+}
+
+.social-link{
+  padding-top:10px;
 }

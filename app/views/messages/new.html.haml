@@ -7,8 +7,10 @@
         %p Please use this form to contact me about getting in shape
         %address
           Locations available throughout Manhattan or in your building gym or apartment
-        %address
-          ph: 917-282-5553
+          %br
+          %abbr{:title=>"Phone"}
+            P:
+          917-282-5553
       .col-lg-8
         =form_for @message, :html => {:class => 'form-horizontal'} do |f|
           -if @message.errors.any?

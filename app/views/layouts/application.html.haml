@@ -3,7 +3,7 @@
   %head
     %title Focusedfitness
     = stylesheet_link_tag    'application', media: 'all'
-    = google_font_link_tag 'Open+Sans:400,700'
+    = google_font_link_tag 'Noto+Serif:400,700,400italic|Open+Sans:700,400'
     = javascript_include_tag 'application'
     = csrf_meta_tags
   %body
@@ -65,9 +65,9 @@
 
 
           %ul.list-inline
-            %li
+            %li.social-link
               %a{:href=>"#"} Twitter
-            %li
+            %li.social-link
               %a{:href=>"https://www.facebook.com/pages/FOCUSED-FITNESS-NYC/340306392766", :target => "_blank"} Facebook
 
           %p
