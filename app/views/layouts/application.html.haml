@@ -40,37 +40,36 @@
     = yield
 
 
-    %footer
-      %nav.navbar.navbar-default.navbar-fixed-bottom
-        .container.text-center
-          .navbar-inner.navbar-content-center
-            / %h3
-            /   Subscribe to my newsletter
-            / %p
-            /   Enter your name and email below
-            / %form.form-inline{:action => "", :role=>"form"}
-            /   .form-group
-            /     %label.sr-only{:for => "subscribe-name"} Name
-            /     %input.form-control#subscribe-name{:type => "text", :placeholder=>"Name"}
-            /   .form-group
-            /     %label.sr-only{:for => "subscribe-email"} Email
-            /     %input.form-control#subscribe-email{:type => "email", :placeholder => "Email"}
+    %footer.footer
+      .container.text-center
+        .navbar-inner.navbar-content-center
+          / %h3
+          /   Subscribe to my newsletter
+          / %p
+          /   Enter your name and email below
+          / %form.form-inline{:action => "", :role=>"form"}
+          /   .form-group
+          /     %label.sr-only{:for => "subscribe-name"} Name
+          /     %input.form-control#subscribe-name{:type => "text", :placeholder=>"Name"}
+          /   .form-group
+          /     %label.sr-only{:for => "subscribe-email"} Email
+          /     %input.form-control#subscribe-email{:type => "email", :placeholder => "Email"}
 
-            /   %buttom.btn.btn-default.navbar-button{:type=>"submit"} Subscribe
+          /   %buttom.btn.btn-default.navbar-button{:type=>"submit"} Subscribe
 
-            / %p
-            /   %small
-            /     %em
-            /       I will only use your address for sending you great content from my blog. I will not send to a third party
+          / %p
+          /   %small
+          /     %em
+          /       I will only use your address for sending you great content from my blog. I will not send to a third party
 
 
-            %ul.list-inline
-              %li
-                %a{:href=>"#"} Twitter
-              %li
-                %a{:href=>"#"} Facebook
+          %ul.list-inline
+            %li
+              %a{:href=>"#"} Twitter
+            %li
+              %a{:href=>"#"} Facebook
 
-            %p
-              &copy; Copyright Focused Fitness NYC 2014
+          %p
+            &copy; Copyright Focused Fitness NYC 2014
 
 
