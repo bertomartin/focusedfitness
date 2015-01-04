@@ -1,6 +1,6 @@
 class MessageMailer < ApplicationMailer
 
-  default from: 'alan.sidransky@yahoo.com'
+  default from: 'alansidransky@msn.com'
 
   def message_email(message)
     @message_name = message.name
