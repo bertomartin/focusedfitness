@@ -3,6 +3,8 @@
   %head
     %title Focusedfitness
     = stylesheet_link_tag    'application', media: 'all'
+    / %link{:rel => :stylesheet, :type => "text/css", :href=>"http://www.google.com/fonts#UsePlace:use/Collection:Montserrat:400,700"}
+    = google_font_link_tag 'Montserrat:400,700'
     = javascript_include_tag 'application'
     = csrf_meta_tags
   %body
